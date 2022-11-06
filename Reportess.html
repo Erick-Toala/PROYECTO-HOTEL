@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes</title>
+    <!-- link para el código css-->
+    <link rel="stylesheet" type="text/css" href="css/estilos2.css">
+    <!-- link para los logos -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!-- Barra lateral que contendrá todas las opciones de navegación por el sistema -->
+    <div class="sidebar">
+        <div class="logo_contenido">
+            <div class="logoHotel">
+                <!-- Icono y nombre del hotel -->
+                <i class='bx bx-building'></i>
+                <div class="logo_nombre">Mi Hotel</div>
+            </div>
+            <!-- Boton para desplegar o plegar la barra lateral -->
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <!-- Lista de navegacion de las opciones del sistema-->
+        <!-- se usó logos <i></i> en cada item para que se vea más fachero, 
+        estos proporcionados por la pagina boxicons-->
+        <ul class="nav_list">
+            <li>
+                    <!-- item Buscar -->
+                    <i class='bx bx-search'></i>
+                    <input type="text" placeholder="Buscar...">
+                    <span class="info_herramienta">Buscar</span>
+            </li>
+            <li>
+                <!-- item para la Dashboard -->
+                <a href="Dashboard.html"> <!-- Redireccionará al contenido inicial-->
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="nombre_link">Dashboard</span>
+                </a>
+                    <span class="info_herramienta">Dashboard</span>
+            </li>
+            <li>
+                <!-- item para la Gestión del hotel -->
+                <a href="Habitacion.html"> <!-- Redireccionará a la página de gestión-->
+                    <i class='bx bx-slider'></i>
+                    <span class="nombre_link">Gestion</span>
+                </a>
+                    <span class="info_herramienta">Gestion</span>
+            </li>
+            <li>
+                <!-- item para la Tienda del hotel -->
+                <a href="Tienda.html"> <!-- Redireccionará a la página de la tienda-->
+                    <i class='bx bx-store'></i> 
+                    <span class="nombre_link">Tienda</span>
+                </a>
+                    <span class="info_herramienta">Tienda</span>
+            </li>
+            <li>
+                <!-- item para el Mantenimiento del hotel -->
+                <a href="Mantenimiento.html"> <!-- Redireccionará a la página de mentenimiento-->
+                    <i class='bx bx-cog' ></i>
+                    <span class="nombre_link">Mantenimiento</span>
+                </a>
+                    <span class="info_herramienta">Mantenimiento</span>
+            </li>
+            <li>
+                <!-- item para los Reportes del hotel -->
+                <a href="Reportess.html"> <!-- Redireccionará a la página de reportes-->
+                    <i class='bx bx-bar-chart-alt-2'></i>
+                    <span class="nombre_link">Reportes</span>
+                </a>
+                    <span class="info_herramienta">Reportes</span>
+            </li>
+            <li> 
+                <!-- item para los Usuarios del hotel -->
+                <a href="#"> <!-- Redireccionará a la página de usuarios-->
+                    <i class='bx bx-user'></i>
+                    <span class="nombre_link">Usuarios</span>
+                </a>
+                    <span class="info_herramienta">Usuarios</span>
+            </li>
+            <li>
+                <!-- item para los Clientes del hotel -->
+                <a href="Clientess.html"> <!-- Redireccionará a la página de clientes-->
+                    <i class='bx bx-group'></i>
+                    <span class="nombre_link">Clientes</span>
+                </a>
+                    <span class="info_herramienta">Clientes</span>
+            </li>
+        </ul>
+        <!-- Esta parte mostrará el usuario que haya iniciado sesión en el sistema-->
+        <div class="perfil_contenido">
+            <div class="perfil">
+                <div class="perfil_detalles">
+                    <!-- foto respectiva del usuario -->
+                    <img src="perfil.jpg" alt="">
+                    <div class="nombre_trabajo">
+                        <!-- Nombre y rol respectivos del usuario -->
+                        <div class="nombre">Erick Toala</div>
+                        <div class="rol">Administrador</div>
+                    </div>
+                </div>
+                <!-- icono para la opción de cerrar sesión-->
+                <i class='bx bx-log-out' id="salir"></i>
+            </div>   
+        </div>
+    </div>
+    <!-- contenido principal del sistema-->
+    <div class="inicio_contenido">
+        <div class="contenido_pagina">
+            <div class="tarjeta sombra-sm mt-2">
+                <div class="tarjeta_cuerpo p-3">
+                    <h6 class="tarjeta_titulo fuente_negrita texto-primario" style="font-size: 15px;">Exportar Recepciones</h6>
+                    <hr class="mt-1 mb-1" />
+        
+                        <div class="fila_form alinear-elementos-fin">
+                            <div class="columna-md-3">
+                                <label class="form-texto fuente_negrita">Número Habitación:</label>
+                                <select id="cbohabitacion" name="idhabitacion" class="control_entrada">
+                                    <option value="value1">NUM: 001</option>
+                                    <option value="value2">NUM: 002</option>
+                                    <option value="value3">NUM: 003</option>
+                                    <option value="value1">NUM: 004</option>
+                                    <option value="value2">NUM: 005</option>
+                                    <option value="value3">NUM: 006</option>
+                                    <option value="value1">NUM: 007</option>
+                                    <option value="value2">NUM: 008</option>
+                                    <option value="value3">NUM: 009</option>
+                                </select>
+                            </div>
+                            <div class="columna-md-3">
+                                <label class="form-texto fuente_negrita">Fecha Inicio:</label>
+                                <input name="fechainicio" class="control_entrada" value="27/10/2022" />
+                            </div>
+                            <div class="columna-md-3">
+                                <label class="form-texto fuente_negrita">Fecha Fin:</label>
+                                <input name="fechafin" class="control_entrada" value="28/10/2022" />
+                            </div>
+                            <div class="columna-md-3">
+                                <button type="submit" class="btn btn-block btn-success"><i class="fa fa-download" aria-hidden="true"></i> Descargar</button>
+                            </div>
+                        </div>
+            
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- este script se usará para activar la opción de desplegar o plegar la barra lateral -->
+    <script>
+        //botón para el menú = #btn, barralateral = .sidebar, opción de buscar = bx-search
+        let btn=document.querySelector("#btn");
+        let sidebar=document.querySelector(".sidebar");
+        let buscarBtn=document.querySelector("bx-search");
+        //el botón btn activará esta función para desplegar o plegar la barra lateral con un click
+        btn.onclick=function(){
+            sidebar.classList.toggle("active"); 
+        }
+        buscarBtn.onclick=function(){
+            sidebar.classList.toggle("active"); 
+        }
+    </script>
+</body>
+</html>
